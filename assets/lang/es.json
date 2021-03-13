@@ -1,0 +1,47 @@
+{
+  "login_start": "Below are list of strings for login es ",
+  "login_title": "Bienvenid@ a ",
+  "log_in_google" : "Entrar con Google",
+  "log_in_facebook" : "Entrar con Facebook",
+  "login_end": "------------------------------------------------------------------------------------",
+
+  "home_start": "Below are list of strings for home",
+  "home_greetings": "Hola",
+  "home_choose_language" : "Escoge idioma",
+  "home_first_title": "¿Con qué tienes problemas?",
+  "home_second_title": "¿Qué le pasa a tu dispositivo?",
+  "home_third_title": "¿Cómo te gustaría recibir ayuda?",
+  "home_end": "-------------------------------------------------------------------------------------",
+
+  "device_start": "Below are list of strings for home",
+  "devices" : [
+    "Móviles",
+    "Escritorio",
+    "Portátil",
+    "TV",
+    "Tablet",
+    "Gaming",
+    "Impresoras",
+    "Periféricos",
+    "Smart Home",
+    "Electrodomésticos",
+    "Redes",
+    "Otros"
+  ],
+  "device_issues" : [
+    "Inicio o encendido",
+    "Problemas Hardware",
+    "Bateria or Cargando",
+    "Software o Uso",
+    "Datos o Sincronización",
+    "Internet o Conectividad",
+    "Otros"
+  ],
+  "help_method" : [
+    ["Hablar con un técnico","@Danos tu teléfono y te llamaremos."],
+    ["Chat","@Empezar a chatear con nosotros"],
+    ["Llevar a reparar","@Encontrar un servicio de reparación autorizado"]
+  ],
+  "device_end": "-------------------------------------------------------------------------------------"
+
+}

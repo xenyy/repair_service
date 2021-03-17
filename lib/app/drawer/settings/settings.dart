@@ -114,6 +114,7 @@ class SettsLists extends StatelessWidget {
                 title: Text(sett.text),
                 trailing: getTrailing(sett.type, context),
                 onTap: () {
+                  // ignore: unnecessary_statements
                   sett.route.length != 0 ? Navigator.pushNamed(context, sett.route) : null;
                 },
               ),
@@ -212,7 +213,7 @@ class DialogShowBtn extends StatelessWidget {
     this.icon = PhosphorIcons.caret_down,
   }) : super(key: key);
 
-  final Function onPress;
+  final VoidCallback onPress;
   final IconData icon;
 
   @override
@@ -220,7 +221,7 @@ class DialogShowBtn extends StatelessWidget {
     return IconButton(
       splashRadius: 24,
       icon: Icon(icon),
-      onPressed: () => onPress,
+      onPressed: onPress,
     );
   }
 }

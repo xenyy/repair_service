@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:device_repair/app/drawer/chats/chats.dart';
 import 'package:device_repair/app/drawer/settings/account_settings.dart';
 import 'package:device_repair/app/drawer/settings/settings.dart';

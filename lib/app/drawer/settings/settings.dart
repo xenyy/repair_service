@@ -234,7 +234,7 @@ class DefaultSwitch extends StatelessWidget {
     this.active,
   }) : super(key: key);
 
-  final Function onChange;
+  final Function(bool) onChange;
   final Color? activeTack;
   final Color? active;
   final bool value;
@@ -243,7 +243,7 @@ class DefaultSwitch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Switch(
       value: value,
-      onChanged: (_) => onChange,
+      onChanged: onChange,
       activeTrackColor: activeTack,
       activeColor: active,
     );

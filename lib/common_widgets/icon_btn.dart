@@ -7,7 +7,7 @@ class CustomIconButton extends StatelessWidget {
     required this.icon,
   }) : super(key: key);
 
-  final Function onPress;
+  final VoidCallback onPress;
   final IconData icon;
 
   @override
@@ -15,7 +15,7 @@ class CustomIconButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 8),
       child: IconButton(
-        onPressed: () => onPress,
+        onPressed: onPress,
         splashRadius: 24,
         icon: Icon(
           icon,

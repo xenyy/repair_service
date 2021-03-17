@@ -13,7 +13,7 @@ class LogInMethodBtn extends StatelessWidget {
   final String text;
   final Color bkColor;
   final String imageAsset;
-  final Function onPress;
+  final VoidCallback onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class LogInMethodBtn extends StatelessWidget {
       height: DeviceUtils.getScaledHeight(context, 0.06),
       width: DeviceUtils.getScaledWidth(context, 0.7),
       child: TextButton(
-        onPressed: () => onPress,
+        onPressed: onPress,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

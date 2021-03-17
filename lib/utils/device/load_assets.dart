@@ -13,15 +13,15 @@ Future<void> loadImage(ImageProvider provider) {
   final Completer<void> completer = Completer();
   final ImageStream stream = provider.resolve(config);
 
-  ImageStreamListener listener;
+  ImageStreamListener? listener;
 
   listener = ImageStreamListener((ImageInfo image, bool sync) {
     debugPrint("Image ${image.debugLabel} finished loading");
     completer.complete();
-    stream.removeListener(listener);
-  }, onError: (dynamic exception, StackTrace stackTrace) {
+    stream.removeListener(listener!);
+  }, onError: (dynamic? exception, StackTrace? stackTrace) {
     completer.complete();
-    stream.removeListener(listener);
+    stream.removeListener(listener!);
     FlutterError.reportError(FlutterErrorDetails(
       context: ErrorDescription('image failed to load'),
       library: 'image resource service',

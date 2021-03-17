@@ -45,7 +45,7 @@ class SharedPreferenceHelper {
 
   Future<int> get getLogInMethod async {
     return _sharedPreference.then((preference) {
-      return preference.getInt(Preferences.log_in_method);
+      return preference.getInt(Preferences.log_in_method)!;
     });
   }
 
@@ -86,7 +86,7 @@ class SharedPreferenceHelper {
   // Language:---------------------------------------------------
   Future<String> get currentLanguage {
     return _sharedPreference.then((prefs) {
-      return prefs.getString(Preferences.current_language);
+      return prefs.getString(Preferences.current_language) ?? 'en';
     });
   }
 

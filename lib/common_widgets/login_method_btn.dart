@@ -3,11 +3,11 @@ import 'package:device_repair/utils/device/device_utils.dart';
 
 class LogInMethodBtn extends StatelessWidget {
   const LogInMethodBtn({
-    Key key,
-    @required this.text,
-    @required this.bkColor,
-    @required this.imageAsset,
-    @required this.onPress,
+    Key? key,
+    required this.text,
+    required this.bkColor,
+    required this.imageAsset,
+    required this.onPress,
   }) : super(key: key);
 
   final String text;
@@ -21,7 +21,7 @@ class LogInMethodBtn extends StatelessWidget {
       height: DeviceUtils.getScaledHeight(context, 0.06),
       width: DeviceUtils.getScaledWidth(context, 0.7),
       child: TextButton(
-        onPressed: onPress,
+        onPressed: () => onPress,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

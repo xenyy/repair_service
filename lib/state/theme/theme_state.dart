@@ -3,7 +3,7 @@ import 'package:device_repair/services/app_repository/sharedprefs_repo/sharedpre
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ThemeState extends StateNotifier<bool> {
-  ThemeState(SharedPrefRepository repository, [bool _darkMode])
+  ThemeState(SharedPrefRepository repository, [bool? _darkMode])
       : this._sharedPrefRepository = repository,
         //initialize the theme light
         super(false) {
@@ -13,7 +13,7 @@ class ThemeState extends StateNotifier<bool> {
   final SharedPrefRepository _sharedPrefRepository;
 
   Future init() async {
-    state = await _sharedPrefRepository?.isDarkMode ?? false;
+    state = await _sharedPrefRepository.isDarkMode;
   }
 
   Future changeBrightnessToDark(bool value) async {

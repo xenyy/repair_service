@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:device_repair/services/sharedpref/shared_pref_helper.dart';
 
 class Preference {
-  Future<SharedPreferences> sharedPref;
+  Future<SharedPreferences>? sharedPref;
 
   Preference() {
     sharedPref = provideSharedPreferences();
@@ -15,6 +15,6 @@ class Preference {
 
   //initialize the helper
   SharedPreferenceHelper provideSharedPreferenceHelper() {
-    return SharedPreferenceHelper(sharedPref);
+    return SharedPreferenceHelper(sharedPref!);
   }
 }

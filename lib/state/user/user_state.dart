@@ -3,7 +3,7 @@ import 'package:device_repair/services/app_repository/sharedprefs_repo/sharedpre
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class UserLoginState extends StateNotifier<bool> {
-  UserLoginState(SharedPrefRepository repository, [bool isLoggedIn])
+  UserLoginState(SharedPrefRepository repository, [bool? isLoggedIn])
       : this._sharedPrefRepository = repository,
         super(false) {
     _isLogged();
@@ -13,7 +13,7 @@ class UserLoginState extends StateNotifier<bool> {
 
   void _isLogged() {
     _sharedPrefRepository.isLoggedIn.then((value) {
-      state = value ?? false; //set false if null
+      state = value; //set false if null
     });
   }
 

@@ -21,6 +21,10 @@ class Assets {
 
 enum LogInMethods { google, fb, apple, none }
 
+enum TileType { route, toggle, dialog, none }
+
+enum TicketStatus { open, close, waiting, cancel, none }
+
 class AppColors {
   AppColors._();
 

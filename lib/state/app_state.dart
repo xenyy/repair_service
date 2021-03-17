@@ -1,5 +1,6 @@
 import 'package:device_repair/services/app_repository/sharedprefs_repo/sharedpref_repository.dart';
 import 'package:device_repair/services/sharedpref/shared_pref.dart';
+import 'package:device_repair/state/page_controller/page_controller_state.dart';
 import 'package:device_repair/state/source/source_state.dart';
 import 'package:device_repair/state/theme/theme_state.dart';
 import 'package:device_repair/state/user/user_state.dart';
@@ -22,3 +23,5 @@ final themeNotifier = StateNotifierProvider<ThemeState>(
 //Language state
 final langNotifier = StateNotifierProvider<LanguageState>(
     (ref) => LanguageState(SharedPrefRepository(Preference().provideSharedPreferenceHelper())));
+
+final pageControllerNotifier = StateNotifierProvider<PageControllerState>((ref) => PageControllerState());

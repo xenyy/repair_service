@@ -5,7 +5,7 @@ import 'package:device_repair/services/app_repository/sharedprefs_repo/sharedpre
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LanguageState extends StateNotifier<String> {
-  LanguageState(SharedPrefRepository repository, [String lang])
+  LanguageState(SharedPrefRepository repository, [String? lang])
       : this._sharedPrefRepository = repository,
         //initialize the language with the device locale
         super(Platform.localeName.split("_").first) {
@@ -15,7 +15,7 @@ class LanguageState extends StateNotifier<String> {
   final SharedPrefRepository _sharedPrefRepository;
 
   void init() async {
-    state = await _sharedPrefRepository?.currentLanguage ?? state;
+    state = await _sharedPrefRepository.currentLanguage;
   }
 
   List<Language> supportedLanguages = [

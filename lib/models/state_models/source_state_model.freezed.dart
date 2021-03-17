@@ -16,16 +16,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SourceStateTearOff {
   const _$SourceStateTearOff();
 
-  Start loading() {
-    return const Start();
+  Start<T> loading<T>() {
+    return Start<T>();
   }
 
-  NotLogged notLogged() {
-    return const NotLogged();
+  NotLogged<T> notLogged<T>() {
+    return NotLogged<T>();
   }
 
-  Logged logged() {
-    return const Logged();
+  Logged<T> logged<T>() {
+    return Logged<T>();
   }
 }
 
@@ -33,83 +33,84 @@ class _$SourceStateTearOff {
 const $SourceState = _$SourceStateTearOff();
 
 /// @nodoc
-mixin _$SourceState {
+mixin _$SourceState<T> {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function() notLogged,
+    required TResult Function() logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
-    TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? notLogged,
+    TResult Function()? logged,
+    required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start<T> value) loading,
+    required TResult Function(NotLogged<T> value) notLogged,
+    required TResult Function(Logged<T> value) logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
-    TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start<T> value)? loading,
+    TResult Function(NotLogged<T> value)? notLogged,
+    TResult Function(Logged<T> value)? logged,
+    required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SourceStateCopyWith<$Res> {
+abstract class $SourceStateCopyWith<T, $Res> {
   factory $SourceStateCopyWith(
-          SourceState value, $Res Function(SourceState) then) =
-      _$SourceStateCopyWithImpl<$Res>;
+          SourceState<T> value, $Res Function(SourceState<T>) then) =
+      _$SourceStateCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$SourceStateCopyWithImpl<$Res> implements $SourceStateCopyWith<$Res> {
+class _$SourceStateCopyWithImpl<T, $Res>
+    implements $SourceStateCopyWith<T, $Res> {
   _$SourceStateCopyWithImpl(this._value, this._then);
 
-  final SourceState _value;
+  final SourceState<T> _value;
   // ignore: unused_field
-  final $Res Function(SourceState) _then;
+  final $Res Function(SourceState<T>) _then;
 }
 
 /// @nodoc
-abstract class $StartCopyWith<$Res> {
-  factory $StartCopyWith(Start value, $Res Function(Start) then) =
-      _$StartCopyWithImpl<$Res>;
+abstract class $StartCopyWith<T, $Res> {
+  factory $StartCopyWith(Start<T> value, $Res Function(Start<T>) then) =
+      _$StartCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$StartCopyWithImpl<$Res> extends _$SourceStateCopyWithImpl<$Res>
-    implements $StartCopyWith<$Res> {
-  _$StartCopyWithImpl(Start _value, $Res Function(Start) _then)
-      : super(_value, (v) => _then(v as Start));
+class _$StartCopyWithImpl<T, $Res> extends _$SourceStateCopyWithImpl<T, $Res>
+    implements $StartCopyWith<T, $Res> {
+  _$StartCopyWithImpl(Start<T> _value, $Res Function(Start<T>) _then)
+      : super(_value, (v) => _then(v as Start<T>));
 
   @override
-  Start get _value => super._value as Start;
+  Start<T> get _value => super._value as Start<T>;
 }
 
 /// @nodoc
-class _$Start implements Start {
-  const _$Start();
+class _$Start<T> extends Start<T> {
+  const _$Start() : super._();
 
   @override
   String toString() {
-    return 'SourceState.loading()';
+    return 'SourceState<$T>.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Start);
+    return identical(this, other) || (other is Start<T>);
   }
 
   @override
@@ -117,21 +118,21 @@ class _$Start implements Start {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function() notLogged,
+    required TResult Function() logged,
   }) {
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
-    TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? notLogged,
+    TResult Function()? logged,
+    required TResult orElse(),
   }) {
     if (loading != null) {
       return loading();
@@ -141,21 +142,21 @@ class _$Start implements Start {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start<T> value) loading,
+    required TResult Function(NotLogged<T> value) notLogged,
+    required TResult Function(Logged<T> value) logged,
   }) {
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
-    TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start<T> value)? loading,
+    TResult Function(NotLogged<T> value)? notLogged,
+    TResult Function(Logged<T> value)? logged,
+    required TResult orElse(),
   }) {
     if (loading != null) {
       return loading(this);
@@ -164,38 +165,42 @@ class _$Start implements Start {
   }
 }
 
-abstract class Start implements SourceState {
-  const factory Start() = _$Start;
+abstract class Start<T> extends SourceState<T> {
+  const factory Start() = _$Start<T>;
+  const Start._() : super._();
 }
 
 /// @nodoc
-abstract class $NotLoggedCopyWith<$Res> {
-  factory $NotLoggedCopyWith(NotLogged value, $Res Function(NotLogged) then) =
-      _$NotLoggedCopyWithImpl<$Res>;
+abstract class $NotLoggedCopyWith<T, $Res> {
+  factory $NotLoggedCopyWith(
+          NotLogged<T> value, $Res Function(NotLogged<T>) then) =
+      _$NotLoggedCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$NotLoggedCopyWithImpl<$Res> extends _$SourceStateCopyWithImpl<$Res>
-    implements $NotLoggedCopyWith<$Res> {
-  _$NotLoggedCopyWithImpl(NotLogged _value, $Res Function(NotLogged) _then)
-      : super(_value, (v) => _then(v as NotLogged));
+class _$NotLoggedCopyWithImpl<T, $Res>
+    extends _$SourceStateCopyWithImpl<T, $Res>
+    implements $NotLoggedCopyWith<T, $Res> {
+  _$NotLoggedCopyWithImpl(
+      NotLogged<T> _value, $Res Function(NotLogged<T>) _then)
+      : super(_value, (v) => _then(v as NotLogged<T>));
 
   @override
-  NotLogged get _value => super._value as NotLogged;
+  NotLogged<T> get _value => super._value as NotLogged<T>;
 }
 
 /// @nodoc
-class _$NotLogged implements NotLogged {
-  const _$NotLogged();
+class _$NotLogged<T> extends NotLogged<T> {
+  const _$NotLogged() : super._();
 
   @override
   String toString() {
-    return 'SourceState.notLogged()';
+    return 'SourceState<$T>.notLogged()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NotLogged);
+    return identical(this, other) || (other is NotLogged<T>);
   }
 
   @override
@@ -203,21 +208,21 @@ class _$NotLogged implements NotLogged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function() notLogged,
+    required TResult Function() logged,
   }) {
     return notLogged();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
-    TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? notLogged,
+    TResult Function()? logged,
+    required TResult orElse(),
   }) {
     if (notLogged != null) {
       return notLogged();
@@ -227,21 +232,21 @@ class _$NotLogged implements NotLogged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start<T> value) loading,
+    required TResult Function(NotLogged<T> value) notLogged,
+    required TResult Function(Logged<T> value) logged,
   }) {
     return notLogged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
-    TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start<T> value)? loading,
+    TResult Function(NotLogged<T> value)? notLogged,
+    TResult Function(Logged<T> value)? logged,
+    required TResult orElse(),
   }) {
     if (notLogged != null) {
       return notLogged(this);
@@ -250,38 +255,39 @@ class _$NotLogged implements NotLogged {
   }
 }
 
-abstract class NotLogged implements SourceState {
-  const factory NotLogged() = _$NotLogged;
+abstract class NotLogged<T> extends SourceState<T> {
+  const factory NotLogged() = _$NotLogged<T>;
+  const NotLogged._() : super._();
 }
 
 /// @nodoc
-abstract class $LoggedCopyWith<$Res> {
-  factory $LoggedCopyWith(Logged value, $Res Function(Logged) then) =
-      _$LoggedCopyWithImpl<$Res>;
+abstract class $LoggedCopyWith<T, $Res> {
+  factory $LoggedCopyWith(Logged<T> value, $Res Function(Logged<T>) then) =
+      _$LoggedCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$LoggedCopyWithImpl<$Res> extends _$SourceStateCopyWithImpl<$Res>
-    implements $LoggedCopyWith<$Res> {
-  _$LoggedCopyWithImpl(Logged _value, $Res Function(Logged) _then)
-      : super(_value, (v) => _then(v as Logged));
+class _$LoggedCopyWithImpl<T, $Res> extends _$SourceStateCopyWithImpl<T, $Res>
+    implements $LoggedCopyWith<T, $Res> {
+  _$LoggedCopyWithImpl(Logged<T> _value, $Res Function(Logged<T>) _then)
+      : super(_value, (v) => _then(v as Logged<T>));
 
   @override
-  Logged get _value => super._value as Logged;
+  Logged<T> get _value => super._value as Logged<T>;
 }
 
 /// @nodoc
-class _$Logged implements Logged {
-  const _$Logged();
+class _$Logged<T> extends Logged<T> {
+  const _$Logged() : super._();
 
   @override
   String toString() {
-    return 'SourceState.logged()';
+    return 'SourceState<$T>.logged()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Logged);
+    return identical(this, other) || (other is Logged<T>);
   }
 
   @override
@@ -289,21 +295,21 @@ class _$Logged implements Logged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function() notLogged,
+    required TResult Function() logged,
   }) {
     return logged();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult Function() loading,
-    TResult Function() notLogged,
-    TResult Function() logged,
-    TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? notLogged,
+    TResult Function()? logged,
+    required TResult orElse(),
   }) {
     if (logged != null) {
       return logged();
@@ -313,21 +319,21 @@ class _$Logged implements Logged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start<T> value) loading,
+    required TResult Function(NotLogged<T> value) notLogged,
+    required TResult Function(Logged<T> value) logged,
   }) {
     return logged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult Function(Start value) loading,
-    TResult Function(NotLogged value) notLogged,
-    TResult Function(Logged value) logged,
-    TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start<T> value)? loading,
+    TResult Function(NotLogged<T> value)? notLogged,
+    TResult Function(Logged<T> value)? logged,
+    required TResult orElse(),
   }) {
     if (logged != null) {
       return logged(this);
@@ -336,6 +342,7 @@ class _$Logged implements Logged {
   }
 }
 
-abstract class Logged implements SourceState {
-  const factory Logged() = _$Logged;
+abstract class Logged<T> extends SourceState<T> {
+  const factory Logged() = _$Logged<T>;
+  const Logged._() : super._();
 }

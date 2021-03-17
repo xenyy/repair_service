@@ -1,16 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:device_repair/common_widgets/page_title_txt.dart';
-import 'package:device_repair/models/data_models/help.dart';
+import 'package:device_repair/models/data_models/static_data/help.dart';
 import 'package:device_repair/services/app_repository/local_repo/static_data.dart';
 import 'package:device_repair/utils/device/device_utils.dart';
 import 'package:device_repair/utils/locale/app_localization.dart';
 import 'package:flutter/material.dart';
 
 class FlowThree extends StatelessWidget {
-  final PageController controller;
-
-  const FlowThree({Key key, this.controller}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     List<Help> _help = getHelp(context, helpIcon);
@@ -23,7 +19,7 @@ class FlowThree extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           PageTitle(
-            text: AppLocalizations.of(context).translate('home_third_title'),
+            text: AppLocalizations.of(context)!.translate('home_third_title')!,
           ),
           Expanded(
             child: ListView(
@@ -43,8 +39,8 @@ class FlowThree extends StatelessWidget {
 
 class HelpCard extends StatelessWidget {
   const HelpCard({
-    Key key,
-    @required this.help,
+    Key? key,
+    required this.help,
   }) : super(key: key);
 
   final Help help;

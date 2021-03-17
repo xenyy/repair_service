@@ -39,11 +39,11 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  _showDialog<T>({BuildContext context, Widget child}) {
+  _showDialog<T>({BuildContext? context, Widget? child}) {
     showDialog<T>(
-      context: context,
-      builder: (BuildContext context) => child,
-    ).then<void>((T value) {
+      context: context!,
+      builder: (BuildContext context) => child!,
+    ).then<void>((T? value) {
       // The value passed to Navigator.pop() or null.
     });
   }
@@ -57,9 +57,9 @@ class ProfileScreen extends StatelessWidget {
           final locales = context.read(langNotifier);
           return SimpleDialog(
             title: Text(
-              AppLocalizations.of(context).translate('home_choose_language'),
+              AppLocalizations.of(context)!.translate('home_choose_language')!,
               style: TextStyle(
-                color: Theme.of(context).textTheme.bodyText1.color,
+                color: Theme.of(context).textTheme.bodyText1!.color,
                 fontSize: 16.0,
               ),
             ),
@@ -72,8 +72,8 @@ class ProfileScreen extends StatelessWidget {
                       object.language,
                       style: TextStyle(
                         color: language == object.locale
-                            ? Theme.of(context).textTheme.bodyText1.color
-                            : Theme.of(context).iconTheme.color.withOpacity(0.3),
+                            ? Theme.of(context).textTheme.bodyText1!.color
+                            : Theme.of(context).iconTheme.color!.withOpacity(0.3),
                       ),
                     ),
                     onTap: () {

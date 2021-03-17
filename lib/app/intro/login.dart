@@ -17,36 +17,7 @@ class LogInScreen extends StatelessWidget {
   static const String routeName = "/login";
   @override
   Widget build(BuildContext context) {
-    precacheImage(AssetImage(Assets.appLogo), context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.language_rounded),
-            onPressed: () {
-              _buildLanguageDialog(context);
-            },
-            color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),
-            splashRadius: 27,
-          ),
-          Consumer(
-            builder: (context, watch, child) {
-              final themeIsDark = watch(themeNotifier.state);
-              final themeNotify = context.read(themeNotifier);
-              return IconButton(
-                icon: themeIsDark ? Icon(Icons.wb_sunny_rounded) : Icon(Icons.nightlight_round),
-                color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),
-                onPressed: () {
-                  //changes theme to the opposite of what it was
-                  themeNotify.changeBrightnessToDark(!themeIsDark);
-                },
-                splashRadius: 27,
-              );
-            },
-          ),
-        ],
-      ),
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: DeviceUtils.getScaledHeight(context, 0.02),
@@ -81,7 +52,7 @@ class LogInScreen extends StatelessWidget {
             ),
             SizedBox(height: DeviceUtils.getScaledHeight(context, 0.1)),
             LogInMethodBtn(
-              text: AppLocalizations.of(context).translate('log_in_google'),
+              text: AppLocalizations.of(context)!.translate('log_in_google')!,
               imageAsset: Assets.googleLogo,
               bkColor: AppColors.googleColor,
               onPress: () {
@@ -91,7 +62,7 @@ class LogInScreen extends StatelessWidget {
             ),
             SizedBox(height: DeviceUtils.getScaledHeight(context, 0.015)),
             LogInMethodBtn(
-              text: AppLocalizations.of(context).translate('log_in_facebook'),
+              text: AppLocalizations.of(context)!.translate('log_in_facebook')!,
               imageAsset: Assets.fbLogo,
               bkColor: AppColors.fbColor,
               onPress: () {
@@ -109,89 +80,5 @@ class LogInScreen extends StatelessWidget {
     Future.delayed(Duration(milliseconds: 0), () {
       Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.home, (Route<dynamic> route) => false);
     });
-  }
-
-  _showDialog<T>({BuildContext context, Widget child}) {
-    showDialog<T>(
-      context: context,
-      builder: (BuildContext context) => child,
-    ).then<void>((T value) {
-      // The value passed to Navigator.pop() or null.
-    });
-  }
-
-  _buildLanguageDialog(BuildContext context) {
-    _showDialog<String>(
-      context: context,
-      child: Consumer(
-        builder: (context, watch, child) {
-          final language = watch(langNotifier.state);
-          final locales = context.read(langNotifier);
-          return SimpleDialog(
-            title: Text(
-              AppLocalizations.of(context).translate('home_choose_language'),
-              style: TextStyle(
-                color: Theme.of(context).textTheme.bodyText1.color,
-                fontSize: 16.0,
-              ),
-            ),
-            children: locales.supportedLanguages
-                .map(
-                  (object) => ListTile(
-                    dense: true,
-                    contentPadding: EdgeInsets.all(0.0),
-                    title: Text(
-                      object.language,
-                      style: TextStyle(
-                        color: language == object.locale
-                            ? Theme.of(context).textTheme.bodyText1.color
-                            : Theme.of(context).iconTheme.color.withOpacity(0.3),
-                      ),
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      // change user language based on selected locale
-                      locales.changeLanguage(object.locale);
-                    },
-                  ),
-                )
-                .toList(),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class SimpleDialogItem extends StatelessWidget {
-  const SimpleDialogItem({
-    Key key,
-    this.icon,
-    this.color,
-    @required this.text,
-    @required this.onPress,
-  }) : super(key: key);
-
-  final IconData icon;
-  final Color color;
-  final String text;
-  final Function onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return SimpleDialogOption(
-      onPressed: onPress,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(icon, size: 36.0, color: color),
-          Padding(
-            padding: const EdgeInsetsDirectional.only(start: 16.0),
-            child: Text(text),
-          ),
-        ],
-      ),
-    );
   }
 }

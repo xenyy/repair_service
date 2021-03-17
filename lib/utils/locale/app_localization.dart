@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 
 class AppLocalizations {
   // localization variables
-  final Locale locale;
-  Map<String, String> localizedStrings;
+  final Locale? locale;
+  Map<String, String>? localizedStrings;
 
   // Static member to have a simple access to the delegate from the MaterialApp
   static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
@@ -16,7 +16,7 @@ class AppLocalizations {
 
   // Helper method to keep the code in the widgets concise
   // Localizations are accessed using an InheritedWidget "of" syntax
-  static AppLocalizations of(BuildContext context) {
+  static AppLocalizations? of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
@@ -24,7 +24,7 @@ class AppLocalizations {
   // present in lang folder
   Future<bool> load() async {
     // Load the language JSON file from the "lang" folder
-    String jsonString = await rootBundle.loadString('assets/lang/${locale.languageCode}.json');
+    String jsonString = await rootBundle.loadString('assets/lang/${locale!.languageCode}.json');
     Map<String, dynamic> jsonMap = json.decode(jsonString);
 
     localizedStrings = jsonMap.map((key, value) {
@@ -35,8 +35,8 @@ class AppLocalizations {
   }
 
   // This method will be called from every widget which needs a localized text
-  String translate(String key) {
-    return localizedStrings[key];
+  String? translate(String key) {
+    return localizedStrings![key];
   }
 }
 

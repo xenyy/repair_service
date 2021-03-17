@@ -1,9 +1,45 @@
 {
-  "login_start": "Below are list of strings for login es ",
+  "login_start": "Below are list of strings for login",
   "login_title": "Bienvenid@ a ",
   "log_in_google" : "Entrar con Google",
   "log_in_facebook" : "Entrar con Facebook",
-  "login_end": "------------------------------------------------------------------------------------",
+  "login_end": "----------------------------------------------------------------------------------",
+
+  "screen_titles_start" :  "Below are list of strings for login",
+  "setts_screen" : "Configuración",
+  "account_setts_screen" : "Configuración Cuenta",
+  "ticket_screen" : "Tickets",
+  "chat_screen" : "Chats",
+  "screen_titles_end": "--------------------------------------------------------------------------",
+
+  "settings_start": "Below are list of strings for home",
+  "settings_titles" : [
+    "General",
+    "Preferencias",
+    "Acerca",
+    "Soporte",
+    "Build"
+  ],
+  "settings_tiles" : [
+    "Configuración Cuenta",
+    "Dark Mode",
+    "Idioma",
+    "Politicas de Privacidad",
+    "Acuerdo del Usuario",
+    "Agradecimientos",
+    "Ayuda FAQ",
+    "Reportar Bug",
+    "xxxx.xxx.xx.xx"
+  ],
+  "settings_end": "-------------------------------------------------------------------------------",
+
+  "drawer_start": "Below are list of strings for home",
+  "drawer" : [
+    "Tickets",
+    "Chats",
+    "Configuración"
+  ],
+  "drawer_end": "---------------------------------------------------------------------------------",
 
   "home_start": "Below are list of strings for home",
   "home_greetings": "Hola",
@@ -11,7 +47,7 @@
   "home_first_title": "¿Con qué tienes problemas?",
   "home_second_title": "¿Qué le pasa a tu dispositivo?",
   "home_third_title": "¿Cómo te gustaría recibir ayuda?",
-  "home_end": "-------------------------------------------------------------------------------------",
+  "home_end": "-----------------------------------------------------------------------------------",
 
   "device_start": "Below are list of strings for home",
   "devices" : [
@@ -42,6 +78,13 @@
     ["Chat","@Empezar a chatear con nosotros"],
     ["Llevar a reparar","@Encontrar un servicio de reparación autorizado"]
   ],
-  "device_end": "-------------------------------------------------------------------------------------"
+  "device_end": "---------------------------------------------------------------------------------",
+
+  "ticket_details_start": "Below are list of strings for home",
+  "t_details_desc" : "Motivo del ticket",
+  "t_details_attach" : "Adjuntos",
+  "t_details_contact" : "Centro Reparación",
+  "t_details_notes" : "Notas Reparador",
+  "ticket_details_end": "--------------------------------------------------------------------------"
 
 }

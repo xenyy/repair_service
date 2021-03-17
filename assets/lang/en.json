@@ -3,7 +3,43 @@
   "login_title": "Welcome to ",
   "log_in_google" : "Log in with Google",
   "log_in_facebook" : "Log in with Facebook",
-  "login_end": "------------------------------------------------------------------------------------",
+  "login_end": "----------------------------------------------------------------------------------",
+
+  "screen_titles_start" :  "Below are list of strings for login",
+  "setts_screen" : "Settings",
+  "account_setts_screen" : "Account Settings",
+  "ticket_screen" : "Tickets",
+  "chat_screen" : "Chats",
+  "screen_titles_end": "--------------------------------------------------------------------------",
+
+  "settings_start": "Below are list of strings for home",
+  "settings_titles" : [
+    "General",
+    "Preferences",
+    "About",
+    "Support",
+    "Build"
+  ],
+  "settings_tiles" : [
+    "Account Settings",
+    "Dark Mode",
+    "Language",
+    "Privacy policy",
+    "User agreement",
+    "Acknowledgements",
+    "Help FAQ",
+    "Report Bug",
+    "xxxx.xxx.xx.xx"
+  ],
+  "settings_end": "-------------------------------------------------------------------------------",
+
+  "drawer_start": "Below are list of strings for home",
+  "drawer" : [
+    "Tickets",
+    "Chats",
+    "Settings"
+  ],
+  "drawer_end": "---------------------------------------------------------------------------------",
 
   "home_start": "Below are list of strings for home",
   "home_greetings": "Hi",
@@ -11,7 +47,7 @@
   "home_first_title": "What do you have problems with?",
   "home_second_title": "What's happening to your device?",
   "home_third_title": "How would you like to get help?",
-  "home_end": "-------------------------------------------------------------------------------------",
+  "home_end": "-----------------------------------------------------------------------------------",
 
   "device_start": "Below are list of strings for home",
   "devices" : [
@@ -42,5 +78,12 @@
     ["Chat","@Start a chat session with us"],
     ["Bring in for repair","@Find an authorized service repair"]
   ],
-  "device_end": "-------------------------------------------------------------------------------------"
+  "device_end": "---------------------------------------------------------------------------------",
+
+  "ticket_details_start": "Below are list of strings for home",
+  "t_details_desc" : "What was the ticket for?",
+  "t_details_attach" : "Attachments",
+  "t_details_contact" : "Repair Center",
+  "t_details_notes" : "Repairer Notes",
+  "ticket_details_end": "--------------------------------------------------------------------------"
 }

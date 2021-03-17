@@ -1,15 +1,13 @@
 import 'package:device_repair/common_widgets/c_widgets.dart';
-import 'package:device_repair/models/data_models/device.dart';
+import 'package:device_repair/models/data_models/static_data/device.dart';
 import 'package:device_repair/services/app_repository/local_repo/static_data.dart';
+import 'package:device_repair/state/app_state.dart';
 import 'package:device_repair/utils/device/device_utils.dart';
 import 'package:device_repair/utils/locale/app_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FlowOne extends StatelessWidget {
-  final PageController controller;
-
-  const FlowOne({Key key, this.controller}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     List<Device> _devices = getRepairDevice(context, deviceIcon);
@@ -22,7 +20,7 @@ class FlowOne extends StatelessWidget {
             top: DeviceUtils.getScaledHeight(context, 0.04),
           ),
           child: Text(
-            AppLocalizations.of(context).translate('home_greetings') + ', User',
+            AppLocalizations.of(context)!.translate('home_greetings')! + ', User',
             style: TextStyle(
               color: Theme.of(context).colorScheme.onBackground.withOpacity(0.6),
               fontSize: 25,
@@ -36,7 +34,7 @@ class FlowOne extends StatelessWidget {
             right: DeviceUtils.getScaledWidth(context, 0.05),
           ),
           child: PageTitle(
-            text: AppLocalizations.of(context).translate('home_first_title'),
+            text: AppLocalizations.of(context)!.translate('home_first_title')!,
           ),
         ),
         Expanded(
@@ -62,7 +60,6 @@ class FlowOne extends StatelessWidget {
               children: [
                 ..._devices.map(
                   (device) => DeviceCard(
-                    controller: controller,
                     device: device,
                   ),
                 ),
@@ -77,42 +74,43 @@ class FlowOne extends StatelessWidget {
 
 class DeviceCard extends StatelessWidget {
   const DeviceCard({
-    Key key,
-    @required this.controller,
-    @required this.device,
+    Key? key,
+    required this.device,
   }) : super(key: key);
 
-  final PageController controller;
   final Device device;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        print(device.name);
-        //save device checked
-        controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.ease);
-      },
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(
-              device.icon,
-              size: 60,
-              color: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
-            ),
-            Text(
-              device.name,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),
+    return Consumer(builder: (context, watch, child) {
+      final controller = watch(pageControllerNotifier.state);
+      return GestureDetector(
+        onTap: () {
+          print(device.name);
+          //save device checked
+          controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.ease);
+        },
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                device.icon,
+                size: 60,
+                color: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
               ),
-            ),
-          ],
+              Text(
+                device.name,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

@@ -22,20 +22,16 @@ class _$TicketTearOff {
 
   _Ticket call(
       {required String id,
-      required User user,
+      required String status,
       required String title,
       required String description,
-      required String device,
-      required String status,
-      required String technician}) {
+      required String device}) {
     return _Ticket(
       id: id,
-      user: user,
+      status: status,
       title: title,
       description: description,
       device: device,
-      status: status,
-      technician: technician,
     );
   }
 
@@ -50,12 +46,10 @@ const $Ticket = _$TicketTearOff();
 /// @nodoc
 mixin _$Ticket {
   String get id => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get device => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
-  String get technician => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -68,14 +62,10 @@ abstract class $TicketCopyWith<$Res> {
       _$TicketCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      User user,
+      String status,
       String title,
       String description,
-      String device,
-      String status,
-      String technician});
-
-  $UserCopyWith<$Res> get user;
+      String device});
 }
 
 /// @nodoc
@@ -89,22 +79,20 @@ class _$TicketCopyWithImpl<$Res> implements $TicketCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? user = freezed,
+    Object? status = freezed,
     Object? title = freezed,
     Object? description = freezed,
     Object? device = freezed,
-    Object? status = freezed,
-    Object? technician = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -117,22 +105,7 @@ class _$TicketCopyWithImpl<$Res> implements $TicketCopyWith<$Res> {
           ? _value.device
           : device // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      technician: technician == freezed
-          ? _value.technician
-          : technician // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 
@@ -143,15 +116,10 @@ abstract class _$TicketCopyWith<$Res> implements $TicketCopyWith<$Res> {
   @override
   $Res call(
       {String id,
-      User user,
+      String status,
       String title,
       String description,
-      String device,
-      String status,
-      String technician});
-
-  @override
-  $UserCopyWith<$Res> get user;
+      String device});
 }
 
 /// @nodoc
@@ -166,22 +134,20 @@ class __$TicketCopyWithImpl<$Res> extends _$TicketCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? user = freezed,
+    Object? status = freezed,
     Object? title = freezed,
     Object? description = freezed,
     Object? device = freezed,
-    Object? status = freezed,
-    Object? technician = freezed,
   }) {
     return _then(_Ticket(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -194,14 +160,6 @@ class __$TicketCopyWithImpl<$Res> extends _$TicketCopyWithImpl<$Res>
           ? _value.device
           : device // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      technician: technician == freezed
-          ? _value.technician
-          : technician // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -212,12 +170,10 @@ class __$TicketCopyWithImpl<$Res> extends _$TicketCopyWithImpl<$Res>
 class _$_Ticket extends _Ticket {
   const _$_Ticket(
       {required this.id,
-      required this.user,
+      required this.status,
       required this.title,
       required this.description,
-      required this.device,
-      required this.status,
-      required this.technician})
+      required this.device})
       : super._();
 
   factory _$_Ticket.fromJson(Map<String, dynamic> json) =>
@@ -226,21 +182,17 @@ class _$_Ticket extends _Ticket {
   @override
   final String id;
   @override
-  final User user;
+  final String status;
   @override
   final String title;
   @override
   final String description;
   @override
   final String device;
-  @override
-  final String status;
-  @override
-  final String technician;
 
   @override
   String toString() {
-    return 'Ticket(id: $id, user: $user, title: $title, description: $description, device: $device, status: $status, technician: $technician)';
+    return 'Ticket(id: $id, status: $status, title: $title, description: $description, device: $device)';
   }
 
   @override
@@ -249,32 +201,25 @@ class _$_Ticket extends _Ticket {
         (other is _Ticket &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
             (identical(other.device, device) ||
-                const DeepCollectionEquality().equals(other.device, device)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.technician, technician) ||
-                const DeepCollectionEquality()
-                    .equals(other.technician, technician)));
+                const DeepCollectionEquality().equals(other.device, device)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(user) ^
+      const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(device) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(technician);
+      const DeepCollectionEquality().hash(device);
 
   @JsonKey(ignore: true)
   @override
@@ -290,12 +235,10 @@ class _$_Ticket extends _Ticket {
 abstract class _Ticket extends Ticket {
   const factory _Ticket(
       {required String id,
-      required User user,
+      required String status,
       required String title,
       required String description,
-      required String device,
-      required String status,
-      required String technician}) = _$_Ticket;
+      required String device}) = _$_Ticket;
   const _Ticket._() : super._();
 
   factory _Ticket.fromJson(Map<String, dynamic> json) = _$_Ticket.fromJson;
@@ -303,17 +246,13 @@ abstract class _Ticket extends Ticket {
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  User get user => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
   @override
   String get title => throw _privateConstructorUsedError;
   @override
   String get description => throw _privateConstructorUsedError;
   @override
   String get device => throw _privateConstructorUsedError;
-  @override
-  String get status => throw _privateConstructorUsedError;
-  @override
-  String get technician => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TicketCopyWith<_Ticket> get copyWith => throw _privateConstructorUsedError;
